@@ -94,6 +94,11 @@ const deleteTask = (index) => {
     persistent: true,
   }).onOk(() => {
     tasks.splice(index, 1);
+    $q.notify({
+      message: "Task deleted ☹",
+      icon: "announcement",
+      color: "red",
+    });
   });
 };
 
